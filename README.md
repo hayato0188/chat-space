@@ -9,7 +9,7 @@
 
 ### Association
 - has_many :groups, through: :members
-- has_many :comments
+- has_many :messages
 
 
 ## membersテーブル
@@ -31,12 +31,12 @@
 |------|----|-------|
 |group_name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 
 
 ### Association
 - has_many :users, through: :members
-- has_many :comments
+- has_many :messages
 
 
 
@@ -48,3 +48,4 @@
 |group_id|integer|null: false, foreign_key: true|
 |body|text|
 |image|string|
+
