@@ -37,3 +37,14 @@
 ### Association
 - has_many :users, through: :members
 - has_many :comments
+
+
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|body|text|
+|image|string|
