@@ -49,3 +49,30 @@ $BUTTON_COLOR     : #38AEF0;
   }
   @import "groups";
 }
+.chat {
+  width: calc(100% - 300px);
+  .header {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      .left-header__title {
+        color: #333;
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      .left-header__members {
+        display: flex;
+        color: #999;
+        font-seze: 12px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
