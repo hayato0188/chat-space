@@ -22,5 +22,13 @@ $TEXT-COLOR         : #434a54;
         padding-left: 10px;
       }
     }
+    .lower-message {
+      margin-top: 10px;
+      .lower-message__content {
+        color: $TEXT-COLOR;
+        font-size: 14px;
+        margin-bottom:10px;
+      }
+    }
   }
 }
