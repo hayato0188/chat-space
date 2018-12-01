@@ -9,5 +9,18 @@ $TEXT-COLOR         : #434a54;
   padding: 46px 40px 0;
   .message {
     margin-bottom: 40px;
+    .upper-message {
+      display: flex;
+      .upper-message__user-name {
+        color: $TEXT-COLOR;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .upper-message__date {
+        color: #999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
   }
 }
