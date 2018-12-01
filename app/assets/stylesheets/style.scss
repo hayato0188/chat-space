@@ -74,5 +74,14 @@ $BUTTON_COLOR     : #38AEF0;
         }
       }
     }
+    .btn-outline-primary {
+      @include border($BUTTON_COLOR);
+      color: $BUTTON_COLOR;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
   }
 }
