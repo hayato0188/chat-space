@@ -9,10 +9,10 @@
       %ul.header__lists
         %li.list
           %a{href: ""}
-            %i.far.fa-comments
+            = fa_icon "comments"
         %li.list
           %a{href: ""}
-            %i.fas.fa-cog
+            = fa_icon "cog"
     = render "groups"
   .chat
     .header
@@ -30,7 +30,7 @@
       .input-group-append
         %button#button-addon2.btn.btn-outline-secondary{type: "button"}
           %label.form__mask
-            %i.far.fa-image
+            = fa_icon "image"
             %input.hidden.js-file{type: "file"}
 
       %input.btn.btn-primary{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
