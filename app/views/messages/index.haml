@@ -36,6 +36,13 @@
               %li.member
           %button.btn.btn-outline-primary{:type => "button"} Edit
         = render "messages"
+        .form
+          %input.form-control{:placeholder => "Text input", :rows => "2", :type => "text"}/
+          .input-group-append
+            %button#button-addon2.btn.btn-outline-secondary{:type => "button"}
+              %label.form__mask
+                %i.far.fa-image
+                %input.hidden.js-file{:type => "file"}
     / Optional JavaScript
     / jQuery first, then Popper.js, then Bootstrap JS
     %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}

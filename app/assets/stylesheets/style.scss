@@ -85,4 +85,35 @@ $BUTTON_COLOR     : #38AEF0;
     }
   }
   @import "messages";
+  .form {
+    background-color: #DDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    display: flex;
+    .input-group-append {
+      background-color: #fff;
+      .btn-outline-secondary {
+        @include border(#ddd);
+        .hidden {
+          display: none;
+        }
+        .fa-image {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .form-control {
+      height: 50px;
+    }
+    .btn-primary {
+      width: 100px;
+      margin-left: 15px;
+      padding: 0 30px;
+      font-size: 16px;
+      background-color: $BUTTON_COLOR;
+      border: 1px solid $BUTTON_COLOR;
+    }
+  }
 }
