@@ -47,7 +47,7 @@ $BUTTON_COLOR     : #38AEF0;
       }
     }
   }
-  @import "groups";
+  @import "groups_layout";
 }
 .chat {
   width: calc(100% - 300px);
@@ -84,7 +84,7 @@ $BUTTON_COLOR     : #38AEF0;
       padding: 0 20px;
     }
   }
-  @import "messages";
+  @import "messages_layout";
   .form {
     background-color: #DDD;
     box-sizing: border-box;
