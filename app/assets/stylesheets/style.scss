@@ -1,12 +1,12 @@
 @import "mixin/mixin";
+@import "variable";
 
-$BUTTON_COLOR     : #38AEF0;
 
 
 
 .notification {
   color: white;
-  background-color: $BUTTON_COLOR;
+  background-color: $BLUE_BUTTON;
   text-align: center;
   margin-bottom: 0;
 }
@@ -15,10 +15,10 @@ $BUTTON_COLOR     : #38AEF0;
 }
 .side-bar {
   box-sizing: border-box;
-  color: #fff;
+  color: $WHITE;
   width: 300px;
   .header {
-    background-color: #253141;
+    background-color: $SIDE_HEADER_NAVY;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
@@ -64,7 +64,7 @@ $BUTTON_COLOR     : #38AEF0;
       }
       .left-header__members {
         display: flex;
-        color: #999;
+        color: $TEXT_GRAY;
         font-seze: 12px;
         margin-top: 15px;
         margin-bottom: 0;
@@ -75,8 +75,8 @@ $BUTTON_COLOR     : #38AEF0;
       }
     }
     .btn-outline-primary {
-      @include border($BUTTON_COLOR);
-      color: $BUTTON_COLOR;
+      @include border($BLUE_BUTTON);
+      color: $BLUE_BUTTON;
       float: right;
       height: 40px;
       line-height: 40px;
@@ -86,15 +86,15 @@ $BUTTON_COLOR     : #38AEF0;
   }
   @import "messages_layout";
   .form {
-    background-color: #DDD;
+    background-color: $GACK_GROUND_GRAY;
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
     display: flex;
     .input-group-append {
-      background-color: #fff;
+      background-color: $WHITE;
       .btn-outline-secondary {
-        @include border(#ddd);
+        @include border($GACK_GROUND_GRAY);
         .hidden {
           display: none;
         }
@@ -112,8 +112,8 @@ $BUTTON_COLOR     : #38AEF0;
       margin-left: 15px;
       padding: 0 30px;
       font-size: 16px;
-      background-color: $BUTTON_COLOR;
-      border: 1px solid $BUTTON_COLOR;
+      background-color: $BLUE_BUTTON;
+      border: 1px solid $BLUE_BUTTON;
     }
   }
 }

@@ -1,5 +1,4 @@
-$TEXT-COLOR         : #434a54;
-
+@import "variable";
 
 .messages {
   background-color: #AAA;
@@ -12,12 +11,12 @@ $TEXT-COLOR         : #434a54;
     .upper-message {
       display: flex;
       &__user-name {
-        color: $TEXT-COLOR;
+        color: $MESSAGE_GRAY;
         font-size: 16px;
         font-weight: bold;
       }
       &__date {
-        color: #999;
+        color: $TEXT_GRAY;
         font-size: 12px;
         padding-left: 10px;
       }
@@ -25,7 +24,7 @@ $TEXT-COLOR         : #434a54;
     .lower-message {
       margin-top: 10px;
       &__content {
-        color: $TEXT-COLOR;
+        color: $MESSAGE_GRAY;
         font-size: 14px;
         margin-bottom:10px;
       }
