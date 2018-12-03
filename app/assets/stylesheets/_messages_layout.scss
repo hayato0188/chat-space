@@ -1,0 +1,33 @@
+@import "variable";
+
+.messages {
+  background-color: #AAA;
+  box-sizing: border-box;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
+  padding: 46px 40px 0;
+  .message {
+    margin-bottom: 40px;
+    .upper-message {
+      display: flex;
+      &__user-name {
+        color: $MESSAGE_GRAY;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: $TEXT_GRAY;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .lower-message {
+      margin-top: 10px;
+      &__content {
+        color: $MESSAGE_GRAY;
+        font-size: 14px;
+        margin-bottom:10px;
+      }
+    }
+  }
+}

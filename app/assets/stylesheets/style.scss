@@ -1,0 +1,119 @@
+@import "mixin/mixin";
+@import "variable";
+
+
+
+
+.notification {
+  color: white;
+  background-color: $BLUE_BUTTON;
+  text-align: center;
+  margin-bottom: 0;
+}
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  box-sizing: border-box;
+  color: $WHITE;
+  width: 300px;
+  .header {
+    background-color: $SIDE_HEADER_NAVY;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+    .header__name {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .header__lists {
+      display: inline-block;
+      float: right;
+      a {
+        cursor: pointer;
+        text-transform: underline;
+      }
+      .list {
+        display: inline-block;
+        height: 100px;
+        width: 16px;
+      }
+      .fa-comments {
+        font-size: 14px;
+      }
+      .fa-cog {
+        font-size: 14px;
+      }
+    }
+  }
+  @import "groups_layout";
+}
+.chat {
+  width: calc(100% - 300px);
+  .header {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      .left-header__title {
+        color: #333;
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      .left-header__members {
+        display: flex;
+        color: $TEXT_GRAY;
+        font-seze: 12px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+    .btn-outline-primary {
+      @include border($BLUE_BUTTON);
+      color: $BLUE_BUTTON;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
+  }
+  @import "messages_layout";
+  .form {
+    background-color: $GACK_GROUND_GRAY;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    display: flex;
+    .input-group-append {
+      background-color: $WHITE;
+      .btn-outline-secondary {
+        @include border($GACK_GROUND_GRAY);
+        .hidden {
+          display: none;
+        }
+        .fa-image {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .form-control {
+      height: 50px;
+    }
+    .btn-primary {
+      width: 100px;
+      margin-left: 15px;
+      padding: 0 30px;
+      font-size: 16px;
+      background-color: $BLUE_BUTTON;
+      border: 1px solid $BLUE_BUTTON;
+    }
+  }
+}
