@@ -1,6 +1,3 @@
-
-
-
 .wrapper
   = render 'shared/side_bar'
   .chat
@@ -13,7 +10,7 @@
           %li.member
           %li.member
       %button.btn.btn-outline-primary{type: "button"} Edit
-    = render "messages"
+    = render "messages/messages"
     .form
       %input.form-control{placeholder: "Text input", rows: "2", type: "text"}/
       .input-group-append
