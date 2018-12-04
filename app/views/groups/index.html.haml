@@ -1,19 +1,5 @@
-
-
-=render "notification"
 .wrapper
-  .side-bar
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to do
-            = fa_icon "comments",class: 'icon'
-        %li.list
-          = link_to edit_user_path(current_user) do
-            = fa_icon "cog", class: 'icon'
-    = render "groups"
+  = render 'shared/side_bar'
   .chat
     .header
       .left-header
@@ -24,7 +10,7 @@
           %li.member
           %li.member
       %button.btn.btn-outline-primary{type: "button"} Edit
-    = render "messages"
+    = render "messages/messages"
     .form
       %input.form-control{placeholder: "Text input", rows: "2", type: "text"}/
       .input-group-append
