@@ -1,5 +1,5 @@
 .wrapper
-  = render 'groups/side_bar'
+  = render 'shared/side_bar'
   .chat
     .header
       .left-header
@@ -10,7 +10,8 @@
           %li.member
           %li.member
       %button.btn.btn-outline-primary{type: "button"} Edit
-    = render 'messages/messages'
+      .messages
+        = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
