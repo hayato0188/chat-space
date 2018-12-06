@@ -12,10 +12,11 @@
         margin-top: 35px;
       }
       &__members {
-        @include flexbox;
-        color: $light_gray;
+        display: flex;
+        color: $GACK_GROUND_GRAY;
         font-size: 12px;
         margin-top: 15px;
+        margin-bottom: 0px;
         .member {
           display: inline-block;
           padding-right: 5px;
@@ -46,7 +47,7 @@
     }
   }
 
-  @import "stylesheets/messages_layout";
+
 
   // .form {
   //   background-color: #DDDDDD;
@@ -88,30 +89,35 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
-    display: flex;
-    .input-group-append {
-      background-color: $WHITE;
-      .btn-outline-secondary {
-        @include border($GACK_GROUND_GRAY);
-        .hidden {
-          display: none;
-        }
-        .fa-image {
-          font-size: 20px;
+      .form-control {
+        border: none;
+        float: left;
+        height: 50px;
+        width: calc(100% - 150px);
+      }
+      .input-group-append {
+        background-color: $WHITE;
+        float: left;
+        height: 50px;
+        .btn-outline-secondary {
+          @include border($GACK_GROUND_GRAY);
+          .hidden {
+            display: none;
+          }
+          .fa-image {
+            font-size: 20px;
+            line-height: 50px;
+          }
         }
       }
-    }
-
-    .form-control {
-      height: 50px;
-    }
-    .btn-primary {
-      width: 100px;
-      margin-left: 15px;
-      padding: 0 30px;
-      font-size: 16px;
-      background-color: $BLUE_BUTTON;
-      border: 1px solid $BLUE_BUTTON;
-    }
+      .btn-primary {
+        border: none;
+        float: right;height: 50px;
+        margin-left: 15px;
+        padding: 0 25px;
+        font-size: 16px;
+        background-color: $BLUE_BUTTON;
+        border: 1px solid $BLUE_BUTTON;
+      }
   }
 }
