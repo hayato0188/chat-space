@@ -1,0 +1,117 @@
+.chat {
+  width: calc(100% - 300px);
+  .header {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__title {
+        color: #333;
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      &__members {
+        @include flexbox;
+        color: $light_gray;
+        font-size: 12px;
+        margin-top: 15px;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+    // .right-header {
+    //   border: 1px solid $light_blue;
+    //   color: $light_blue;
+    //   float: right;
+    //   height: 40px;
+    //   line-height: 40px;
+    //   margin-top: 28px;
+    //   padding: 0 20px;
+    //   &__button {
+    //     color: $light_blue;
+    //     text-decoration: none;
+    //   }
+    // }
+    .btn-outline-primary {
+      @include border($BLUE_BUTTON);
+      color: $BLUE_BUTTON;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
+  }
+
+  @import "stylesheets/messages_layout";
+
+  // .form {
+  //   background-color: #DDDDDD;
+  //   box-sizing: border-box;
+  //   height: 90px;
+  //   padding: 20px 50px 20px 40px;
+  //   &__message {
+  //     border: none;
+  //     float: left;
+  //     height: 50px;
+  //     width: calc(100% - 150px);
+  //   }
+  //   &__mask {
+  //     background-color: $white;
+  //     float: left;
+  //     height: 50px;
+  //     padding-right: 10px;
+  //     &__image {
+  //       font-size: 20px;
+  //       line-height: 50px;
+  //     }
+  //     .hidden {
+  //       display: none;
+  //     }
+  //   }
+  //   &__submit {
+  //     background-color: $light_blue;
+  //     border: none;
+  //     color: $white;
+  //     float: right;
+  //     font-size: 16px;
+  //     height: 50px;
+  //     margin-left: 15px;
+  //     padding: 0 30px;
+  //   }
+  // }
+  .form {
+    background-color: $GACK_GROUND_GRAY;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    display: flex;
+    .input-group-append {
+      background-color: $WHITE;
+      .btn-outline-secondary {
+        @include border($GACK_GROUND_GRAY);
+        .hidden {
+          display: none;
+        }
+        .fa-image {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .form-control {
+      height: 50px;
+    }
+    .btn-primary {
+      width: 100px;
+      margin-left: 15px;
+      padding: 0 30px;
+      font-size: 16px;
+      background-color: $BLUE_BUTTON;
+      border: 1px solid $BLUE_BUTTON;
+    }
+  }
+}
