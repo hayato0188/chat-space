@@ -1,16 +1,12 @@
 @import "./reset";
 @import "font-awesome";
-@import "groups_layout";
 @import "messages_layout";
 @import "variable";
 @import "style";
-
-@import "mixin/mixin";
-@import "modules/user";
-
 @import "config/colors";
+@import "mixin/mixin";
 @import "modules/flash";
-
 @import "modules/group";
+@import "modules/user";
 
 

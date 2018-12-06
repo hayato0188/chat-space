@@ -1,5 +1,5 @@
 .wrapper
-  = render 'shared/side_bar'
+  = render 'groups/side_bar'
   .chat
     .header
       .left-header
@@ -10,7 +10,7 @@
           %li.member
           %li.member
       %button.btn.btn-outline-primary{type: "button"} Edit
-    = render "messages/messages"
+    = render 'messages/messages'
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -19,3 +19,5 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
+
+
