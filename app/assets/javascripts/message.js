@@ -1,7 +1,6 @@
 $(function(){
-
   function buildHTML(message){
-    var image = message.image ? `<div><img src="${message.image}"></div>` : "";
+    var image = message.image ? `<div><img src="${massege.image.url}"></div>` : "";
     var html = `<div class="upper-message">
                   <div class="upper-message__user-name">
                     ${message.user_name}
@@ -25,7 +24,6 @@ $(function(){
     console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
-
     $.ajax({
       url: url,
       type: "POST",
@@ -38,10 +36,16 @@ $(function(){
       var html = buildHTML(data);
       $('.upper-message__user-name').append(html)
       $('.form-control').val('')
+      $('.messages').animate({
+        scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
     })
     .fail(function(){
       alert('error');
     })
+    .always(function () {
+      $(".input-message__form__submit").removeAttr("disabled");
+    });
+
   })
 });
 

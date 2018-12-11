@@ -4,9 +4,8 @@
     .header
       .left-header
         .left-header__title
-          あをによし
+          = @group.name
         %ul.left-header__members
-          Member : sentokun
           %li.member
           %li.member
       %button.btn.btn-outline-primary{type: "button"} Edit
@@ -20,7 +19,7 @@
             = f.label :image, class: 'form__mask' do
               = fa_icon 'image', class: 'far fa-image'
               = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'btn btn-primary', name: 'submitbutton'
+        = f.submit 'Send', class: 'btn btn-primary input-message__form__submit', name: 'submitbutton'
 
 
 
