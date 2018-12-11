@@ -13,14 +13,14 @@
     .messages
       = render @messages
     .form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: { id: 'new_message' } do |f|
         = f.text_field :content, class: 'form-control', placeholder: 'type a message'
         .input-group-append
           %button#button-addon2.btn.btn-outline-secondary{type: "button"}
             = f.label :image, class: 'form__mask' do
               = fa_icon 'image', class: 'far fa-image'
               = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'btn btn-primary'
+        = f.submit 'Send', class: 'btn btn-primary', name: 'submitbutton'
 
 
 
