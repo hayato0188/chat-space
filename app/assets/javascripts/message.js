@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var image = message.image ? `<img src="${massege.image}" class: 'lower-message__image' />` : "";
+    var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
     var html = `<dic class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -24,7 +24,6 @@ $(function(){
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     console.log(this)
-    debugger;
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
