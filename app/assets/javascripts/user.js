@@ -6,11 +6,6 @@ $(function(){
   var addButton = '.chat-group-user__btn--add'
   var removeButton = '.js-remove-btn'
 
-  function editElement(element) {
-    var result = "^" + element;
-    return result;
-  }
-
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -56,7 +51,6 @@ $(function(){
       else {
         appendNoUser("一致するユーザーはいません")
       }
-      console.log(users)
     })
 
     $(document).on('click', addButton, function(){
