@@ -75,6 +75,36 @@
       padding: 10px 15px;
       box-sizing: border-box;
     }
+  }
+
+  .chat-group-user-form__field {
+    margin-top: 30px;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    .chat-group-user-form__field--left {
+      float: left;
+      width: 30%;
+      padding-right: 20px;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+
+    .chat-group-user-form__field--right {
+      float: right;
+      width: 70%;
+    }
+
+    .chat-group-user-form__label {
+      display: block;
+      line-height: 50px;
+      font-weight: bold;
+      text-align: right;
+    }
+
     .chat-group-user-form__input {
       float: left;
       width: 100%;
@@ -122,3 +152,4 @@
     border: 0;
   }
 }
+
