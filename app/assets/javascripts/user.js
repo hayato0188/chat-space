@@ -5,14 +5,12 @@ $(function(){
   var addedMembers = $('#chat-group-users')
   var addButton = '.chat-group-user__btn--add'
   var removeButton = '.js-remove-btn'
-  var preWord;
 
   function editElement(element) {
     var result = "^" + element;
     return result;
   }
 
-//htm
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -39,20 +37,7 @@ $(function(){
 
   userForm.on("keyup", function(){
     var input = userForm.val();
-    // var inputs = input.split(" ").filter(function(e){ return e;});
-    // var newInputs = inputs.map(editElement);
-    // var word = newInputs.join("|");
-    // var reg = RegExp(word);
     var data = { name: input}
-    //   keyword: word,
-    //   reg: reg,
-    //   preWord: preWord,
-    // console.log(name)
-    console.log(input)
-    // console.log(inputs)
-    // console.log(word)
-    // console.log(reg)
-    console.log(data)
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -63,20 +48,6 @@ $(function(){
 
     .done(function(users){
       searchResult.empty();
-      // appendUser(users);
-      // if (word != preWord) {
-      //     if(users.length !== 0) {
-      //       $.each(function(user){
-      //           appendUser(user);
-      //         })
-      //     }
-      //     else {
-      //       appendNoUser("一致するユーザーはいません")
-      //     }
-      //   preWord = word;
-      //   console.log(users)
-      // };
-            // $(".").empty();
       if(users.length !== 0) {
         users.forEach(function(user){
           appendUser(user);
