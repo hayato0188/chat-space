@@ -1,10 +1,10 @@
 $(function(){
   var formField = $('.chat-group-form__field')
-  var addButton = $('.chat-group-user__btn chat-group-user__btn--add')
-  var removeButton = $('.user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn')
   var searchResult = $('#user-search-result');
   var userForm = $('.chat__group-user_name');
   var addedMembers = $('#chat-group-users')
+  var addButton = '.chat-group-user__btn--add'
+  var removeButton = '.js-remove-btn'
   var preWord;
 
   function editElement(element) {
@@ -88,7 +88,7 @@ $(function(){
       console.log(users)
     })
 
-    $(document).on('click', '.chat-group-user__btn--add', function(){
+    $(document).on('click', addButton, function(){
       var member = {};
       member.id = $(this).attr("data-user-id");
       member.name = $(this).attr("data-user-name");
@@ -97,7 +97,8 @@ $(function(){
     });
 
 
-    $(formField).on('click', 'removeButton', function(){
+    $(formField).on('click', removeButton, function(){
+      $(this).parent().remove();
     });
 
 
