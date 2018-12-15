@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
-    var html = `<dic class="message">
+    var html = `<dic class="message" data-id='${message.id}'>
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.user_name}
@@ -18,24 +18,6 @@ $(function(){
                   </div>
                 </div>`
     return html;
-  }
-  function buildMESSAGE(message) {
-    var html = `<div class="message" data-id='${message.id}'>
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
-                      ${message.user_name}
-                    </div>
-                    <div class="upper-message__date">
-                      ${message.date}
-                    </div>
-                  </div>
-                  <div class="lower-message">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      </p>
-                  </div>
-                </div>`
-    $('.messages').append(html);
   }
 
 
@@ -80,7 +62,7 @@ $(function(){
       var data = {
         message: {id: message_id}
       };
-      console.log(data);
+
       $.ajax({
         url: location.href,
         type: "GET",
@@ -89,12 +71,14 @@ $(function(){
       })
       .done(function(data){
         $.each(data, function(i,data){
-          buildMESSAGE(data);
+        var html = buildHTML(data);
+        $('.messages').append(html);
         $('.messages').animate({
         scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
         })
-        console.log(data)
-
+      .fail(function(){
+        alert('自動読み込みに失敗しました');
+      })
       })
     }
 });
