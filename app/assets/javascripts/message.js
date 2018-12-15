@@ -54,33 +54,33 @@ $(function(){
     setInterval(update,1000);
   });
 
-    function update(){
-      var message_id = $('.message:last').data('id');
-      if (message_id == undefined){
-        $.noop;
-      }
-      var data = {
-        message: {id: message_id}
-      };
-
-      $.ajax({
-        url: location.href,
-        type: "GET",
-        data: data,
-        dataType: 'json'
-      })
-      .done(function(data){
-        $.each(data, function(i,data){
-        var html = buildHTML(data);
-        $('.messages').append(html);
-        $('.messages').animate({
-        scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
-        })
-      .fail(function(){
-        alert('自動読み込みに失敗しました');
-      })
-      })
+  function update(){
+    var message_id = $('.message:last').data('id');
+    if (message_id == undefined){
+      $.noop;
     }
+    var data = {
+      message: {id: message_id}
+    };
+
+    $.ajax({
+      url: location.href,
+      type: "GET",
+      data: data,
+      dataType: 'json'
+    })
+    .done(function(data){
+      $.each(data, function(i,data){
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('.messages').animate({
+      scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+      })
+    })
+    .fail(function(){
+      alert('自動読み込みに失敗しました');
+    })
+  }
 });
 
 
