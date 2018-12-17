@@ -17,6 +17,12 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 set :linked_files, %w{ config/secrets.yml }
 
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["aws_access_key_id"],
+  AWS_SECRET_ACCESS_KEY: ENV["aws_secret_access_key"]
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
@@ -36,9 +42,5 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["aws_access_key_id"],
-  AWS_SECRET_ACCESS_KEY: ENV["aws_secret_access_key"]
+
 }
