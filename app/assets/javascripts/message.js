@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
     var html = `<dic class="message" data-id='${message.id}'>
@@ -50,9 +50,9 @@ $(function(){
 
   })
 
-  $(function(){
-    setInterval(update,1000);
-  });
+  // var interval = setInterval(update,1000){
+  //    if (window.location.href.match(/\/groups\/\d+\/messages/))
+  // }
 
   function update(){
     var message_id = $('.message:last').data('id');
