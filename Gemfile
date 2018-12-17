@@ -59,6 +59,8 @@ group :development do
 
   gem 'pry-byebug'
 end
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
