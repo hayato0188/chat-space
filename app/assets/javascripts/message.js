@@ -1,5 +1,4 @@
-// $(document).on('turbolinks:load',
-function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
     var html = `<dic class="message" data-id='${message.id}'>
@@ -82,7 +81,7 @@ function(){
       alert('自動読み込みに失敗しました');
     })
   }
-};
+});
 
 
 
