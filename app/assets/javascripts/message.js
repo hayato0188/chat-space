@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
     var html = `<dic class="message" data-id='${message.id}'>
@@ -82,7 +82,3 @@ $(document).on('turbolinks:load', function(){
     })
   }
 });
-
-
-
-

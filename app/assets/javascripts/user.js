@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready($(function(){
   var formField = $('.chat-group-form__field')
   var searchResult = $('#user-search-result');
   var userForm = $('.chat__group-user_name');
@@ -69,4 +69,4 @@ $(function(){
 
 
   });
-});
+}));
