@@ -22,9 +22,13 @@ $(document).on("turbolinks:load", function(){
 
 
   $('#new_message').on('submit', function(e) {
-    if ($('.form-control').val() !== '' || $('.form-control').val() === null) {
+    var text = $('.form-control').val();
+    var image = $('.hidden').val();
+
+    if ((text !== '' || text === null)||(image !== '' || image === null)) {
       e.preventDefault();
-      console.log($('.form-control').val());
+      console.log(text);
+      console.log(image);
       var formData = new FormData(this);
       var url = $(this).attr('action')
       $.ajax({
