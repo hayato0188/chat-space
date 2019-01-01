@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", function(){
+$(document).ready(function(){
   function buildHTML(message){
     var image = message.image ? `<img src="${message.image}" class="lower-message__image" />` : "";
     var html = `<dic class="message" data-id='${message.id}'>
@@ -59,38 +59,39 @@ $(document).on("turbolinks:load", function(){
 
   })
 
-});
 
-
-if (location.href === window.location.href.match(/\/groups\/\d+\/messages/))
   $(function(){
-    setInterval(update,1000);
-    console.log(window);
+    if ($(location).attr("href").match(/\/groups\/\d+\/messages/) !== null){
+      setInterval(update,1000);
+      console.log(window);
+    }
   });
-function update(){
-  var message_id = $('.message:last').data('id');
-  if (message_id == undefined){
-    $.noop;
-  }
-  var data = {
-    message: {id: message_id}
-  };
 
-  $.ajax({
-    url: location.href,
-    type: "GET",
-    data: data,
-    dataType: 'json'
-  })
-  .done(function(data){
-    $.each(data, function(i,data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.messages').animate({
-        scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+  function update(){
+    var message_id = $('.message:last').data('id');
+    if (message_id == undefined){
+      $.noop;
+    }
+    var data = {
+      message: {id: message_id}
+    };
+
+    $.ajax({
+      url: location.href,
+      type: "GET",
+      data: data,
+      dataType: 'json'
+    })
+    .done(function(data){
+      $.each(data, function(i,data){
+        var html = buildHTML(data);
+        $('.messages').append(html);
+        $('.messages').animate({
+          scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+        })
       })
-    })
-    .fail(function(){
-      alert('自動読み込みに失敗しました');
-    })
-  }
+      .fail(function(){
+        alert('自動読み込みに失敗しました');
+      })
+    }
+});
